@@ -1,0 +1,29 @@
+<mat-grid-list cols="6" rowHeight="350px" [gutterSize]="'16px'">
+    <mat-grid-tile *ngFor="let quarto of quartos">
+        <mat-card>
+            <img
+                mat-card-image
+                src="assets/images/sem_imagem.jpg"
+                alt="{{ quarto.descricao }}"
+            />
+            <mat-card-content>
+                <mat-card-title>
+                    {{ quarto.nome }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{ quarto.preco | currency: "BRL" }}
+                </mat-card-subtitle>
+            </mat-card-content>
+            <mat-card-actions>
+                <button
+                    (click)="adicionar(quarto)"
+                    mat-stroked-button
+                    color="warn"
+                    mat-button
+                >
+                    Adicionar
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
